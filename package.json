@@ -1,0 +1,20 @@
+{
+  "name": "zh-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zh-cli": "node index.js"
+  },
+  "bin": "./index.js",
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@types/conf": "^3.0.0",
+    "commander": "^10.0.1",
+    "conf": "^11.0.1",
+    "node-fetch": "^3.3.1"
+  }
+}
