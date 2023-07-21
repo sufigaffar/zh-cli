@@ -1,6 +1,6 @@
 import Conf from 'conf';
 import fetch from 'node-fetch';
-import {getInfo} from "../utils/token-set.js";
+import {getInfo} from "../api/token-set.js";
 import {getWebUrl} from "../utils/url.js";
 
 const config = new Conf({projectName: 'zh-cli'});

@@ -2,6 +2,8 @@
 
 import { Command } from "commander";
 import auth from './commands/auth.js';
+import create from "./commands/create.js";
+import importTokens from "./commands/import-tokens.js";
 import publish from "./commands/publish.js";
 import sync from "./commands/sync.js";
 
@@ -17,6 +19,16 @@ program
   .version('1.0.0');
 
 program
+  .command('create <name>')
+  .description('Create token set')
+  .action(create)
+
+program
+  .command('import <set-id> <file-path>')
+  .description('Import tokens to token set')
+  .action(importTokens)
+
+program
   .command('auth <token>')
   .description('Authenticate user')
   .action(auth)
@@ -29,6 +41,5 @@ program
 program
   .command('sync <set-id>')
   .description('Sync token set')
-  .action(sync)
 
 program.parse();
