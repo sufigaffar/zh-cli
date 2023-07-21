@@ -10,8 +10,6 @@ const config = new Conf({projectName: 'zh-cli'});
 async function importTokens(setId, filePath) {
   const authToken = config.get('token');
 
-  console.log('Retrieved auth token', authToken)
-
   // First lets make a request to generate the upload request
   const uploadRequestResponse = await fetch(`https://${getWebUrl()}/api/token_management/upload`, {
     method: 'post',
@@ -25,10 +23,8 @@ async function importTokens(setId, filePath) {
       'Content-Type': 'application/json'
     }
   });
-  console.log('response', uploadRequestResponse)
   const parsedUploadRequestResponse = await uploadRequestResponse.json();
   const uploadRequest = parsedUploadRequestResponse.upload_request;
-  console.log('Upload request retrieved', uploadRequest)
   // Then we make a request to S3 to upload
   const file = readFileSync(filePath, 'utf8');
 
