@@ -25,6 +25,7 @@ async function importTokens(setId, filePath) {
       'Content-Type': 'application/json'
     }
   });
+  console.log('response', uploadRequestResponse)
   const parsedUploadRequestResponse = await uploadRequestResponse.json();
   const uploadRequest = parsedUploadRequestResponse.upload_request;
   console.log('Upload request retrieved', uploadRequest)
