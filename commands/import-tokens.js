@@ -10,7 +10,7 @@ const config = new Conf({projectName: 'zh-cli'});
 async function importTokens(setId, filePath) {
   const authToken = config.get('token');
 
-  console.log('Retrieved auth token')
+  console.log('Retrieved auth token', authToken)
 
   // First lets make a request to generate the upload request
   const uploadRequestResponse = await fetch(`https://${getWebUrl()}/api/token_management/upload`, {
